@@ -73,7 +73,7 @@ public class CoapMessage {
     private CoapMessage(boolean incoming, Type type, int mId, String token, OptionSet options, byte[] payload) {
         this.incoming = incoming;
         this.timestamp = System.currentTimeMillis();
-        this.type = type.toString();
+        this.type = type!=null?type.toString():"UNKNOWN";
         this.mId = mId;
         this.token = token;
 
