@@ -356,7 +356,7 @@ public class LeshanClientDemo {
 				initializer.setInstancesForObject(SECURITY,
 						noSec(serverURI, 123));
 				initializer.setInstancesForObject(SERVER, new Server(123, 30,
-						BindingMode.U, false));
+						BindingMode.T, false));
 			}
 		}
 		initializer.setClassForObject(DEVICE, MyDevice.class);

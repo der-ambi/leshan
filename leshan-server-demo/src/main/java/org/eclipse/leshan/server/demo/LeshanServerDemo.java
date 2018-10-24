@@ -493,12 +493,7 @@ public class LeshanServerDemo {
 			@Override
 			public void updated(RegistrationUpdate update, Registration updatedReg,
 					Registration previousReg) {
-				try {
-					System.err.println(lwServer.send(updatedReg, new ReadRequest("/1/0/0")).getContent().toString());
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 			}
 			
 			@Override
@@ -511,7 +506,12 @@ public class LeshanServerDemo {
 			@Override
 			public void registered(Registration reg, Registration previousReg,
 					Collection<Observation> previousObsersations) {
-				
+				try {
+					System.err.println(lwServer.send(reg, new ReadRequest("/1/0/0")).getContent().toString());
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		// Now prepare Jetty
